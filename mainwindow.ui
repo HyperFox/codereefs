@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Code Reefs</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/resouces/icons/resouces/icons/code_reefs_icon.png</normaloff>:/resouces/icons/resouces/icons/code_reefs_icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="codeEditTab">
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="mainMenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="actionSave_all"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionClose_all"/>
+    <addaction name="separator"/>
+    <addaction name="actionRecent_files"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>编辑(&amp;E)</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionFind"/>
+    <addaction name="actionReplace"/>
+    <addaction name="separator"/>
+    <addaction name="actionConfig"/>
+   </widget>
+   <widget class="QMenu" name="menu_Project">
+    <property name="title">
+     <string>工程(&amp;P)</string>
+    </property>
+    <addaction name="actionNew_project"/>
+    <addaction name="actionOpen_project"/>
+    <addaction name="actionSave_project"/>
+    <addaction name="actionClose_project"/>
+    <addaction name="separator"/>
+    <addaction name="actionBuild"/>
+    <addaction name="actionRebuild_all"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+    <addaction name="actionAbout_Qt"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menu_Debug">
+    <property name="title">
+     <string>调试(&amp;D)</string>
+    </property>
+    <addaction name="action_Run"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menu_Project"/>
+   <addaction name="menu_Debug"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSave_all"/>
+   <addaction name="separator"/>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="separator"/>
+   <addaction name="actionCut"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionPaste"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/new.png</normaloff>:/resouces/icons/resouces/icons/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建(&amp;N)...</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/open.png</normaloff>:/resouces/icons/resouces/icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开(&amp;O)...</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/save.png</normaloff>:/resouces/icons/resouces/icons/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存(&amp;S)</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>另存为(&amp;A)...</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>关闭(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionClose_all">
+   <property name="text">
+    <string>关闭全部(&amp;L)</string>
+   </property>
+  </action>
+  <action name="actionRecent_files">
+   <property name="text">
+    <string>最近的文件(&amp;R)</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>退出(&amp;X)</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/cut.png</normaloff>:/resouces/icons/resouces/icons/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>剪切(&amp;U)</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/copy.png</normaloff>:/resouces/icons/resouces/icons/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/paste.png</normaloff>:/resouces/icons/resouces/icons/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴(&amp;P)</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="text">
+    <string>查找(&amp;F)...</string>
+   </property>
+  </action>
+  <action name="actionReplace">
+   <property name="text">
+    <string>替换(&amp;E)...</string>
+   </property>
+  </action>
+  <action name="actionConfig">
+   <property name="text">
+    <string>配置(&amp;O)...</string>
+   </property>
+  </action>
+  <action name="actionNew_project">
+   <property name="text">
+    <string>新建工程(&amp;N)...</string>
+   </property>
+  </action>
+  <action name="actionOpen_project">
+   <property name="text">
+    <string>打开工程(&amp;O)...</string>
+   </property>
+  </action>
+  <action name="actionSave_project">
+   <property name="text">
+    <string>保存工程(&amp;S)</string>
+   </property>
+  </action>
+  <action name="actionSave_all">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/save_all.png</normaloff>:/resouces/icons/resouces/icons/save_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>全部保存(&amp;L)</string>
+   </property>
+  </action>
+  <action name="actionClose_project">
+   <property name="text">
+    <string>关闭工程(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionBuild">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/build.png</normaloff>:/resouces/icons/resouces/icons/build.png</iconset>
+   </property>
+   <property name="text">
+    <string>编译(&amp;B)</string>
+   </property>
+  </action>
+  <action name="actionRebuild_all">
+   <property name="text">
+    <string>编译所有(&amp;R)</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>关于 Qt...</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/code_reefs_icon.png</normaloff>:/resouces/icons/resouces/icons/code_reefs_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于(&amp;A)...</string>
+   </property>
+  </action>
+  <action name="actionR_un">
+   <property name="text">
+    <string>R&amp;un</string>
+   </property>
+  </action>
+  <action name="action_Run">
+   <property name="text">
+    <string>运行(&amp;R)</string>
+   </property>
+  </action>
+  <action name="actionClose_all_2">
+   <property name="text">
+    <string>全部关闭(&amp;W)</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/undo.png</normaloff>:/resouces/icons/resouces/icons/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤销(&amp;Z)</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/resouces/icons/resouces/icons/redo.png</normaloff>:/resouces/icons/resouces/icons/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>恢复(&amp;Y)</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

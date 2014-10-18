@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/resouces/icons">
+        <file>resouces/icons/code_reefs_icon.png</file>
+        <file>resouces/icons/build.png</file>
+        <file>resouces/icons/new.png</file>
+        <file>resouces/icons/open.png</file>
+        <file>resouces/icons/run.png</file>
+        <file>resouces/icons/save.png</file>
+        <file>resouces/icons/save_all.png</file>
+        <file>resouces/icons/undo.png</file>
+        <file>resouces/icons/redo.png</file>
+        <file>resouces/icons/paste.png</file>
+        <file>resouces/icons/cut.png</file>
+        <file>resouces/icons/copy.png</file>
+    </qresource>
+    <qresource prefix="/resouces/textures">
+        <file>resouces/textures/semi-transparent.png</file>
+    </qresource>
+</RCC>
